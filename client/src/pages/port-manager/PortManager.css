@@ -1,0 +1,669 @@
+.portManager {
+	padding: 24px;
+	color: #f5f5f7;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.portManagerHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 24px;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.portManagerTitleWrapper {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.portManagerTitleIcon {
+	color: #5c8dff;
+	flex-shrink: 0;
+	opacity: 0.9;
+}
+
+.portManagerHeader h2 {
+	font-size: 28px;
+	font-weight: 700;
+	margin: 0;
+	letter-spacing: -0.02em;
+	color: #f5f5f7;
+}
+
+.portManagerActions {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.portManagerButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(142, 142, 147, 0.15);
+	color: rgba(255, 255, 255, 0.9);
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-family: inherit;
+	min-width: 100px;
+}
+
+.portManagerButton svg {
+	flex-shrink: 0;
+	opacity: 0.9;
+}
+
+.portManagerButton:hover {
+	background: rgba(142, 142, 147, 0.25);
+	border-color: rgba(142, 142, 147, 0.4);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portManagerButton:active {
+	transform: translateY(0);
+}
+
+.portManagerButtonPrimary {
+	background: rgba(92, 141, 255, 0.2);
+	border-color: rgba(92, 141, 255, 0.4);
+	color: #5c8dff;
+}
+
+.portManagerButtonPrimary:hover {
+	background: rgba(92, 141, 255, 0.3);
+	border-color: rgba(92, 141, 255, 0.5);
+	box-shadow: 0 4px 16px rgba(92, 141, 255, 0.25);
+}
+
+.portFilters {
+	margin-bottom: 16px;
+}
+
+.portFilterLabel {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+	color: rgba(245, 245, 247, 0.92);
+}
+
+.portFilterCheckbox {
+	display: none;
+}
+
+.portFilterCheckmark {
+	width: 18px;
+	height: 18px;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	background: rgba(28, 28, 30, 0.6);
+	position: relative;
+	transition: all 0.2s ease;
+}
+
+.portFilterCheckbox:checked + .portFilterCheckmark {
+	background: rgba(92, 141, 255, 0.25);
+	border-color: rgba(92, 141, 255, 0.5);
+}
+
+.portFilterCheckbox:checked + .portFilterCheckmark::after {
+	content: '';
+	position: absolute;
+	left: 5px;
+	top: 2px;
+	width: 6px;
+	height: 10px;
+	border: solid rgba(245, 245, 247, 0.95);
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+.portFilterText {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.portFilterCount {
+	font-size: 13px;
+	color: rgba(142, 142, 147, 0.9);
+}
+
+.portManagerEmpty {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 20px;
+	text-align: center;
+}
+
+.portManagerEmptyIcon {
+	color: rgba(142, 142, 147, 0.4);
+	margin-bottom: 24px;
+}
+
+.portManagerEmptyText {
+	font-size: 18px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.9);
+	margin: 0 0 8px 0;
+}
+
+.portManagerEmptyHint {
+	font-size: 14px;
+	color: rgba(142, 142, 147, 0.7);
+	margin: 0;
+	line-height: 1.5;
+}
+
+.processesCard {
+	background: rgba(28, 28, 30, 0.6);
+	border-radius: 14px;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(18px);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+	position: relative;
+}
+
+.processesTableWrapper {
+	overflow-x: auto;
+}
+
+.processesTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.processesTable th,
+.processesTable td {
+	padding: 16px 20px;
+	text-align: left;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.processesTable th {
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	background: rgba(0, 0, 0, 0.25);
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.processesTableBody {
+	display: block;
+	max-height: 600px;
+	overflow-y: auto;
+}
+
+.processesTableBody::-webkit-scrollbar {
+	width: 8px;
+}
+
+.processesTableBody::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.processesTableBody::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 4px;
+}
+
+.processesTableBody::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.processesTable thead,
+.processesTable tbody tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.portRowListen {
+	background: rgba(92, 141, 255, 0.06);
+}
+
+.portRowOther {
+	background: rgba(142, 142, 147, 0.04);
+}
+
+.portAddress {
+	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+	color: rgba(245, 245, 247, 0.92);
+}
+
+.portProtocol {
+	font-weight: 700;
+	color: rgba(142, 142, 147, 0.9);
+	text-transform: uppercase;
+}
+
+.portPid {
+	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+	font-weight: 700;
+	color: rgba(92, 141, 255, 0.95);
+}
+
+.portProcess {
+	color: rgba(245, 245, 247, 0.92);
+}
+
+.portStatusWrapper {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.portStatus {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.portStatusListen {
+	background: rgba(92, 141, 255, 0.95);
+	box-shadow: 0 0 0 3px rgba(92, 141, 255, 0.18);
+}
+
+.portStatusOther {
+	background: rgba(142, 142, 147, 0.75);
+	box-shadow: 0 0 0 3px rgba(142, 142, 147, 0.18);
+}
+
+.portStatusText {
+	font-size: 13px;
+	font-weight: 700;
+	color: rgba(245, 245, 247, 0.92);
+}
+
+.portLegend {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 12px 16px;
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+	color: rgba(142, 142, 147, 0.85);
+	font-size: 13px;
+}
+
+.legendItem {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.portActions {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.portActionBtn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	padding: 6px 10px;
+	font-size: 12px;
+	font-weight: 700;
+	border-radius: 10px;
+	border: 1px solid;
+	cursor: pointer;
+	transition: all 0.18s ease;
+	white-space: nowrap;
+}
+
+.portActionBtn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.portActionBtn--kill {
+	background: rgba(255, 69, 58, 0.12);
+	border-color: rgba(255, 69, 58, 0.35);
+	color: rgba(255, 69, 58, 0.95);
+}
+
+.portActionBtn--kill:hover:not(:disabled) {
+	background: rgba(255, 69, 58, 0.22);
+	border-color: rgba(255, 69, 58, 0.5);
+	transform: translateY(-1px);
+	box-shadow: 0 1px 6px rgba(255, 69, 58, 0.25);
+}
+
+.processModalBody {
+	padding: 28px;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.processModalButton {
+	padding: 12px 28px;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-family: inherit;
+}
+
+.processModalButtonCancel {
+	background: rgba(142, 142, 147, 0.15);
+	border-color: rgba(142, 142, 147, 0.3);
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.processModalButtonCancel:hover {
+	background: rgba(142, 142, 147, 0.25);
+	border-color: rgba(142, 142, 147, 0.4);
+}
+
+.processModalButtonConfirm {
+	background: rgba(92, 141, 255, 0.2);
+	border-color: rgba(92, 141, 255, 0.45);
+	color: #5c8dff;
+}
+
+.processModalButtonConfirm:hover {
+	background: rgba(92, 141, 255, 0.3);
+	border-color: rgba(92, 141, 255, 0.6);
+	box-shadow: 0 6px 18px rgba(92, 141, 255, 0.2);
+}
+
+.processModalButton:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.addProcessField {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 16px;
+}
+
+.addProcessFieldLabel {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 13px;
+	font-weight: 700;
+	color: rgba(245, 245, 247, 0.92);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+.addProcessFieldIcon {
+	opacity: 0.85;
+}
+
+.addProcessFieldInput {
+	height: 42px;
+	padding: 10px 14px;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	background: rgba(0, 0, 0, 0.25);
+	color: rgba(245, 245, 247, 0.95);
+	font-size: 14px;
+	outline: none;
+	transition: all 0.2s ease;
+}
+
+.addProcessFieldInput:focus {
+	border-color: rgba(92, 141, 255, 0.55);
+	box-shadow: 0 0 0 3px rgba(92, 141, 255, 0.12);
+}
+
+.addProcessHint {
+	margin-top: 8px;
+	font-size: 13px;
+	color: rgba(142, 142, 147, 0.85);
+	line-height: 1.6;
+}
+
+.addProcessHint code {
+	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+	font-size: 12px;
+	padding: 2px 6px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	color: rgba(245, 245, 247, 0.95);
+}
+
+.launchSection {
+	margin-bottom: 16px;
+}
+
+.launchSectionHeader {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 10px;
+}
+
+.launchSectionTitle {
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: rgba(245, 245, 247, 0.92);
+}
+
+.launchSectionHint {
+	font-size: 12px;
+	color: rgba(142, 142, 147, 0.8);
+}
+
+.launchPresets {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 10px;
+}
+
+.launchPreset {
+	text-align: left;
+	padding: 12px 12px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(0, 0, 0, 0.18);
+	color: rgba(245, 245, 247, 0.92);
+	cursor: pointer;
+	transition: all 0.18s ease;
+}
+
+.launchPreset:hover {
+	background: rgba(92, 141, 255, 0.12);
+	border-color: rgba(92, 141, 255, 0.25);
+	transform: translateY(-1px);
+}
+
+.launchPresetTitle {
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 4px;
+}
+
+.launchPresetHint {
+	font-size: 12px;
+	color: rgba(142, 142, 147, 0.85);
+	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.launchRecents {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.launchRecent {
+	text-align: left;
+	padding: 10px 12px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	background: rgba(255, 255, 255, 0.03);
+	color: rgba(245, 245, 247, 0.92);
+	cursor: pointer;
+	transition: all 0.18s ease;
+}
+
+.launchRecent:hover {
+	background: rgba(255, 255, 255, 0.06);
+	border-color: rgba(255, 255, 255, 0.14);
+	transform: translateY(-1px);
+}
+
+.launchRecentMain {
+	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+	font-size: 13px;
+	line-height: 1.4;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.launchRecentCmd {
+	font-weight: 800;
+	color: rgba(92, 141, 255, 0.95);
+}
+
+.launchRecentArgs {
+	color: rgba(229, 229, 234, 0.88);
+}
+
+.launchRecentCwd {
+	margin-top: 4px;
+	font-size: 12px;
+	color: rgba(142, 142, 147, 0.85);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.portCheck {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 12px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	background: rgba(255, 255, 255, 0.03);
+	margin: -2px 0 14px;
+}
+
+.portCheck--busy {
+	border-color: rgba(255, 69, 58, 0.28);
+	background: rgba(255, 69, 58, 0.06);
+}
+
+.portCheckTitle {
+	font-size: 13px;
+	font-weight: 700;
+	color: rgba(245, 245, 247, 0.92);
+}
+
+.portCheckText {
+	font-size: 12px;
+	color: rgba(142, 142, 147, 0.9);
+	margin-top: 2px;
+}
+
+.portCheckText--ok {
+	color: rgba(96, 255, 165, 0.9);
+}
+
+.portCheckAction {
+	padding: 8px 12px;
+	border-radius: 10px;
+	border: 1px solid rgba(92, 141, 255, 0.35);
+	background: rgba(92, 141, 255, 0.16);
+	color: rgba(245, 245, 247, 0.95);
+	font-weight: 800;
+	font-size: 12px;
+	cursor: pointer;
+	transition: all 0.18s ease;
+	white-space: nowrap;
+}
+
+.portCheckAction:hover {
+	background: rgba(92, 141, 255, 0.24);
+	border-color: rgba(92, 141, 255, 0.5);
+	transform: translateY(-1px);
+}
+
+.spinnerOverlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.35);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	z-index: 1;
+}
+
+.spinnerText {
+	font-size: 13px;
+	color: #e5e7eb;
+}
+
+.spinnerSystem {
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: conic-gradient(from 0deg, #60a5fa 0deg, rgba(96, 165, 250, 0) 300deg);
+	-webkit-mask: radial-gradient(farthest-side, transparent 60%, black 61%);
+	mask: radial-gradient(farthest-side, transparent 60%, black 61%);
+	filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.35));
+	animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px) scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+

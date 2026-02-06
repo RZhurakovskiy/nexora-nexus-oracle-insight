@@ -1,0 +1,50 @@
+.app-version-badge {
+	position: fixed;
+	right: 18px;
+	bottom: 18px;
+	z-index: 14000;
+
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 12px;
+	border-radius: 14px;
+
+	background: rgba(28, 28, 30, 0.92);
+	backdrop-filter: blur(18px);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+
+	color: rgba(245, 245, 247, 0.92);
+	font-size: 12px;
+	line-height: 1;
+	user-select: text;
+}
+
+.app-version-badge__label {
+	color: rgba(142, 142, 147, 0.95);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+.app-version-badge__value {
+	font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+	font-weight: 800;
+	color: rgba(245, 245, 247, 0.95);
+}
+
+.app-version-badge__sep {
+	color: rgba(99, 102, 241, 0.85);
+	font-weight: 900;
+}
+
+@media (max-width: 520px) {
+	.app-version-badge {
+		right: 12px;
+		bottom: 12px;
+		gap: 6px;
+		padding: 9px 10px;
+	}
+}

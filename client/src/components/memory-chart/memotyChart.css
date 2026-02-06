@@ -1,0 +1,209 @@
+.cpu-indicator-details {
+	margin-top: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: stretch;
+	width: 100%;
+}
+
+.cpu-chart-container {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.cpu-chart-header {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cpu-chart-content {
+	display: flex;
+	align-items: stretch;
+	gap: 24px;
+}
+
+.cpu-chart-wrapper {
+	flex: 1;
+	min-width: 0;
+	height: 450px;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	backdrop-filter: none;
+	box-shadow: none;
+}
+
+.cpu-indicator {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 200px;
+	padding: 24px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 12px;
+	backdrop-filter: blur(10px);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.cpu-indicator-value {
+	font-size: 3rem;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 8px;
+	letter-spacing: -0.02em;
+}
+
+.cpu-indicator-label {
+	color: #8e8e93;
+	font-size: 13px;
+	font-weight: 500;
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+.cpu-indicator-status {
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.server-offline-message {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 40px;
+	background: rgba(28, 28, 30, 0.55);
+	border: 1px solid rgba(255, 69, 58, 0.3);
+	border-radius: 14px;
+	backdrop-filter: blur(18px);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	min-height: 450px;
+}
+
+.server-offline-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 24px;
+	color: #ff453a;
+	opacity: 0.9;
+}
+
+.server-offline-icon svg {
+	width: 64px;
+	height: 64px;
+}
+
+.server-offline-title {
+	font-size: 24px;
+	font-weight: 600;
+	color: #ff453a;
+	margin: 0 0 16px 0;
+	letter-spacing: -0.01em;
+}
+
+.server-offline-description {
+	font-size: 15px;
+	color: #8e8e93;
+	line-height: 1.6;
+	margin: 0;
+	max-width: 500px;
+}
+
+.server-offline-description code {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 4px 8px;
+	border-radius: 6px;
+	font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+	font-size: 13px;
+	color: #f5f5f7;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+	.cpu-chart-container {
+		flex-direction: column;
+	}
+
+	.cpu-chart-wrapper {
+		height: 350px;
+		padding: 16px;
+	}
+
+	.cpu-indicator {
+		min-width: auto;
+		width: 100%;
+		padding: 20px;
+	}
+
+	.server-offline-message {
+		padding: 40px 24px;
+		min-height: 350px;
+	}
+
+	.server-offline-icon {
+		margin-bottom: 20px;
+	}
+
+	.server-offline-icon svg {
+		width: 48px;
+		height: 48px;
+	}
+
+	.server-offline-title {
+		font-size: 20px;
+	}
+
+	.server-offline-description {
+		font-size: 14px;
+	}
+}
+
+.memory-detail {
+	display: flex;
+	flex-direction: column;
+	padding: 12px 14px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+		0 8px 20px rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(18px);
+	text-align: left;
+}
+
+.memory-detail-label {
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.55);
+	margin-bottom: 4px;
+}
+
+.memory-detail-value {
+	font-size: 20px;
+	font-weight: 600;
+	color: #f5f5f7;
+	letter-spacing: -0.01em;
+}
+
+.memory-detail-used .memory-detail-value {
+	color: #0a84ff;
+}
+
+.memory-detail-total .memory-detail-value {
+	color: #30d158;
+}

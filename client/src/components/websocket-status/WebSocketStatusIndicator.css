@@ -1,0 +1,48 @@
+.ws-status-indicator {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 12px;
+	background: rgba(28, 28, 30, 0.6);
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 8px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.ws-status-indicator__dot {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 8px;
+	height: 8px;
+	flex-shrink: 0;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+.ws-status-indicator__dot svg {
+	width: 100%;
+	height: 100%;
+}
+
+.ws-status-indicator__text {
+	color: rgba(142, 142, 147, 0.9);
+	white-space: nowrap;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.ws-status-indicator__dot[style*="#30d158"],
+.ws-status-indicator__dot[style*="#8e8e93"],
+.ws-status-indicator__dot[style*="#ff453a"] {
+	animation: none;
+}

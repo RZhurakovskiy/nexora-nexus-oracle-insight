@@ -1,0 +1,237 @@
+.metrics-history-container {
+	padding: 24px;
+	color: #f5f5f7;
+}
+
+.metrics-history-header {
+	margin-bottom: 24px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.metrics-history-title {
+	margin: 0 0 16px 0;
+	font-size: 28px;
+	font-weight: 700;
+	color: #f5f5f7;
+	letter-spacing: -0.02em;
+}
+
+.metrics-history-filters {
+	display: flex;
+	gap: 16px;
+	align-items: flex-end;
+	flex-wrap: wrap;
+}
+
+.filter-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.filter-group label {
+	font-size: 12px;
+	color: rgba(142, 142, 147, 0.9);
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.filter-group input {
+	padding: 10px 12px;
+	background: rgba(28, 28, 30, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	font-size: 14px;
+	color: #f5f5f7;
+	font-family: inherit;
+	min-width: 150px;
+	transition: all 0.2s ease;
+}
+
+.filter-group input:focus {
+	outline: none;
+	border-color: rgba(92, 141, 255, 0.5);
+	box-shadow: 0 0 0 3px rgba(92, 141, 255, 0.1);
+}
+
+.filter-group input[type='number'] {
+	min-width: 100px;
+}
+
+.datetime-input-wrapper {
+	position: relative;
+	cursor: pointer;
+}
+
+.datetime-input {
+	width: 100%;
+	cursor: pointer;
+	position: relative;
+	padding-right: 32px;
+}
+
+.datetime-input::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+	opacity: 1;
+	position: absolute;
+	right: 8px;
+	width: 20px;
+	height: 20px;
+	z-index: 1;
+}
+
+.filter-clear-btn {
+	padding: 10px 20px;
+	background: rgba(255, 69, 58, 0.2);
+	border: 1px solid rgba(255, 69, 58, 0.4);
+	color: rgba(255, 69, 58, 0.95);
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	font-family: inherit;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.filter-clear-btn:hover:not(:disabled) {
+	background: rgba(255, 69, 58, 0.3);
+	border-color: rgba(255, 69, 58, 0.5);
+	box-shadow: 0 4px 16px rgba(255, 69, 58, 0.25);
+}
+
+.filter-clear-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.filter-apply-btn {
+	padding: 10px 20px;
+	background: rgba(92, 141, 255, 0.2);
+	border: 1px solid rgba(92, 141, 255, 0.4);
+	color: #5c8dff;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	font-family: inherit;
+}
+
+.filter-apply-btn:hover:not(:disabled) {
+	background: rgba(92, 141, 255, 0.3);
+	border-color: rgba(92, 141, 255, 0.5);
+	box-shadow: 0 4px 16px rgba(92, 141, 255, 0.25);
+}
+
+.filter-apply-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.metrics-history-table-wrapper {
+	overflow-x: auto;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: rgba(15, 15, 20, 0.9);
+}
+
+.metrics-history-table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.metrics-history-table thead {
+	background: rgba(20, 20, 25, 0.98);
+}
+
+.metrics-history-table th {
+	padding: 12px;
+	text-align: left;
+	font-weight: 600;
+	font-size: 11px;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #c7c7cc;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	white-space: nowrap;
+}
+
+.metrics-history-table td {
+	padding: 12px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	font-size: 13px;
+	color: #f5f5f7;
+	vertical-align: middle;
+}
+
+.metrics-history-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.metrics-history-table tbody tr:hover {
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.metrics-history-info {
+	margin-top: 16px;
+	padding: 12px;
+	background: rgba(28, 28, 30, 0.5);
+	border-radius: 8px;
+	font-size: 14px;
+	color: rgba(142, 142, 147, 0.9);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.loading-message,
+.error-message,
+.empty-message {
+	padding: 48px;
+	text-align: center;
+	font-size: 16px;
+	color: rgba(142, 142, 147, 0.8);
+}
+
+.error-message {
+	color: rgba(255, 69, 58, 0.9);
+}
+
+.recording-bar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 12px;
+	border-radius: 12px;
+	background: rgba(28, 28, 30, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(18px);
+}
+
+.recording-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgba(255, 69, 58, 0.95);
+	box-shadow: 0 0 0 3px rgba(255, 69, 58, 0.18);
+}
+
+.recording-text {
+	font-size: 13px;
+	color: rgba(245, 245, 247, 0.92);
+}
+
+.recording-actions {
+	display: inline-flex;
+	gap: 10px;
+	align-items: center;
+}
+
+
